@@ -1,0 +1,49 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Poop Calendar"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+boot_splash/bg_color=Color(0.0823529, 0.0823529, 0.0823529, 1)
+boot_splash/image="res://icons/splash_screen_image.png"
+config/icon="res://icons/poop_calendar_main_icon.png"
+
+[autoload]
+
+Global="*res://global.gd"
+
+[debug]
+
+gdscript/warnings/untyped_declaration=2
+gdscript/warnings/unsafe_property_access=2
+gdscript/warnings/unsafe_method_access=2
+gdscript/warnings/unsafe_cast=1
+gdscript/warnings/unsafe_call_argument=2
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=2266
+window/stretch/aspect="keep_width"
+window/handheld/orientation=1
+window/vsync/vsync_mode=0
+window/warnings/unsafe_call_argument=2
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot-sqlite/plugin.cfg")
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

@@ -1,0 +1,168 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtlxkvqqmhag0"]
+
+[ext_resource type="Theme" uid="uid://0v5t0uvnmwop" path="res://themes/default_theme.tres" id="1_bikqe"]
+[ext_resource type="PackedScene" uid="uid://dk74d8vqo4pxv" path="res://pages/calendar/calendar_elements/calendar_cell.tscn" id="1_h3p5t"]
+[ext_resource type="Script" path="res://pages/calendar/calendar_elements/month_calendar.gd" id="1_xm886"]
+[ext_resource type="FontFile" uid="uid://c5dsu2boa5ojt" path="res://themes/fonts/Poppins/Poppins-Light.ttf" id="4_t41ls"]
+
+[node name="MonthCalendar" type="MarginContainer" node_paths=PackedStringArray("calendar_cell_container", "month_label")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_bikqe")
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_xm886")
+month = 6
+cell_font_colors = {
+false: Color(0.203922, 0.203922, 0.203922, 1),
+true: Color(1, 1, 1, 1)
+}
+calendar_cell = ExtResource("1_h3p5t")
+calendar_cell_container = NodePath("VBoxContainer/CalendarCellContainer")
+month_label = NodePath("VBoxContainer/VBoxContainer/MonthLabel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MonthLabel" type="Label" parent="VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_t41ls")
+theme_override_font_sizes/font_size = 40
+text = "Juin"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="ColorRect2" type="ColorRect" parent="VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0.162066, 0.162066, 0.162066, 1)
+
+[node name="CalendarCellContainer" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+columns = 7
+
+[node name="CalendarCell" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell2" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell3" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell4" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell6" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell5" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell7" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell8" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell9" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell10" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell11" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell12" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell13" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell14" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell15" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell16" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell17" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell18" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell19" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell20" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell21" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell22" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell23" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell24" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell25" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell26" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell27" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell28" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell29" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell30" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell31" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell32" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell33" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell34" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="CalendarCell35" parent="VBoxContainer/CalendarCellContainer" instance=ExtResource("1_h3p5t")]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0.162066, 0.162066, 0.162066, 1)

@@ -1,0 +1,101 @@
+[gd_scene load_steps=10 format=3 uid="uid://dk74d8vqo4pxv"]
+
+[ext_resource type="Theme" uid="uid://0v5t0uvnmwop" path="res://themes/default_theme.tres" id="1_drldy"]
+[ext_resource type="Script" path="res://pages/calendar/calendar_elements/calendar_cell.gd" id="1_wcu3m"]
+[ext_resource type="PackedScene" uid="uid://ceukbgaycvsmv" path="res://pages/calendar/calendar_elements/day_poops_popup/day_poops_popup.tscn" id="3_atrnr"]
+[ext_resource type="Texture2D" uid="uid://gpujonv2ksxu" path="res://pages/calendar/calendar_elements/assets/empty.png" id="4_hutof"]
+[ext_resource type="FontFile" uid="uid://c5dsu2boa5ojt" path="res://themes/fonts/Poppins/Poppins-Light.ttf" id="4_khyja"]
+[ext_resource type="Texture2D" uid="uid://77ejp2r078rw" path="res://global_assets/poop_counter.svg" id="5_f0yur"]
+[ext_resource type="Theme" uid="uid://bb8l8c83dmjmt" path="res://themes/empty.tres" id="5_ms8ps"]
+[ext_resource type="Texture2D" uid="uid://4sljnbwdkkub" path="res://global_assets/poop_counter_plus.svg" id="6_16f5n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kq7ox"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="CalendarCell" type="PanelContainer"]
+self_modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 1
+theme = ExtResource("1_drldy")
+theme_override_styles/panel = SubResource("StyleBoxFlat_kq7ox")
+script = ExtResource("1_wcu3m")
+day_poops_popup = ExtResource("3_atrnr")
+
+[node name="ForAspectRatio" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("4_hutof")
+expand_mode = 5
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="Number" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_khyja")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -9
+theme_override_constants/margin_top = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -16
+
+[node name="Poop1" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_f0yur")
+
+[node name="Poop2" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_f0yur")
+
+[node name="Poop3" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_f0yur")
+
+[node name="Poop4" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("5_f0yur")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+
+[node name="Poop5Plus" type="TextureRect" parent="MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("6_16f5n")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("5_ms8ps")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,891 @@
+[gd_scene load_steps=40 format=3 uid="uid://6mn45h6asdub"]
+
+[ext_resource type="Script" path="res://bottom_menu_bar/add_poop_button/add_poop_popup.gd" id="1_f767d"]
+[ext_resource type="Theme" uid="uid://0v5t0uvnmwop" path="res://themes/default_theme.tres" id="1_u5xl1"]
+[ext_resource type="Texture2D" uid="uid://ccqy7liqv0jm6" path="res://global_assets/star_full.svg" id="3_ilv01"]
+[ext_resource type="Theme" uid="uid://bb8l8c83dmjmt" path="res://themes/empty.tres" id="3_k064a"]
+[ext_resource type="FontFile" uid="uid://sl0w6cqe5tr1" path="res://themes/fonts/Poppins/Poppins-ExtraLight.ttf" id="3_t8i0j"]
+[ext_resource type="Texture2D" uid="uid://c1l7q1lxmtvt3" path="res://global_assets/star_hollow.svg" id="4_erkfr"]
+[ext_resource type="Texture2D" uid="uid://bdyq8pyrtp0s5" path="res://global_assets/arrow_grey.svg" id="4_mhflc"]
+[ext_resource type="FontFile" uid="uid://gyheg3u4ca3h" path="res://themes/fonts/Poppins/Poppins-Medium.ttf" id="4_qgvlx"]
+[ext_resource type="Script" path="res://bottom_menu_bar/add_poop_button/add_poop_button.gd" id="8_gy44p"]
+
+[sub_resource type="Gradient" id="Gradient_mis0g"]
+offsets = PackedFloat32Array(0.403756)
+colors = PackedColorArray(0, 0, 0, 0.5)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_v7dmh"]
+gradient = SubResource("Gradient_mis0g")
+width = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b34ba"]
+bg_color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oh7oa"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_872wx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_41lcs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w6l25"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_77xsr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e88kp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udonh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1kwrp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q260q"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mndwb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_junfc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23p2p"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_pkgs7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3x64"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6n6m7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n5gfu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28wx1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kuorq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3mxi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_na86r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ovytd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rjtva"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yepeu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6tugn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_550l8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cdbf"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.380392, 0.196078, 0.0784314, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.38, 0.196, 0.078, 0.397)
+shadow_size = 3
+shadow_offset = Vector2(-2.12, 2.865)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwlns"]
+content_margin_top = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.299134, 0.149013, 0.0530945, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+shadow_color = Color(0.38, 0.196, 0.078, 0.397)
+shadow_size = 3
+shadow_offset = Vector2(-2.12, 2.865)
+
+[node name="AddPoopPopup" type="Control" node_paths=PackedStringArray("add_poop_page", "close_button", "day_button", "month_button", "year_button", "hour_button", "minute_button", "location", "texture_button", "size_button", "transit_button", "comment_button", "add_poop_button", "stars_button", "stars_texture")]
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_u5xl1")
+script = ExtResource("1_f767d")
+add_poop_page = NodePath("AddPoopPage")
+close_button = NodePath("CloseButton")
+day_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer/DayNameButton")
+month_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer/MonthNameButton")
+year_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer/YearNameButton")
+hour_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer/HBoxContainer/HourButton")
+minute_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer/HBoxContainer/MinuteButton")
+location = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer2/Panel2/MarginContainer/LocationLineEdit")
+texture_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/VBoxContainer2/Panel2/MarginContainer/TextureButton")
+size_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3/VBoxContainer2/Panel2/MarginContainer/SizeButton")
+transit_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5/VBoxContainer2/Panel2/MarginContainer/TransitButton")
+comment_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer2/Panel2/MarginContainer/CommentTextEdit")
+add_poop_button = NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer4/AddPoopButton")
+stars_button = [NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star1/Star1Button"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star2/Star2Button"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star3/Star3Button"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star4/Star4Button"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star5/Star5Button")]
+stars_texture = [NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star1"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star2"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star3"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star4"), NodePath("AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star5")]
+full_star_texture = ExtResource("3_ilv01")
+empty_star_texture = ExtResource("4_erkfr")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = SubResource("GradientTexture1D_v7dmh")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AddPoopPage" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 834.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_b34ba")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AddPoopPage"]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="AddPoopPage/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="NullButton" type="Button" parent="AddPoopPage/ScrollContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("3_k064a")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="MarginContainer6" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.47788, 0.47788, 0.47788, 1)
+theme_override_font_sizes/font_size = 40
+text = "Nouveau Caca"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Date"
+
+[node name="Panel" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 11
+
+[node name="DayNameButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_872wx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_41lcs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w6l25")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_77xsr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e88kp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_udonh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1kwrp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_q260q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mndwb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_junfc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_23p2p")
+theme_override_icons/arrow = SubResource("PortableCompressedTexture2D_pkgs7")
+selected = 0
+item_count = 1
+popup/item_0/text = "01"
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MonthNameButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_872wx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_41lcs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w6l25")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_77xsr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e88kp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_udonh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1kwrp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_q260q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mndwb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_junfc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_23p2p")
+theme_override_icons/arrow = SubResource("PortableCompressedTexture2D_pkgs7")
+flat = true
+selected = 0
+item_count = 12
+popup/item_0/text = "Janvier"
+popup/item_1/text = "Février"
+popup/item_1/id = 1
+popup/item_2/text = "Mars"
+popup/item_2/id = 2
+popup/item_3/text = "Avril"
+popup/item_3/id = 3
+popup/item_4/text = "Mai"
+popup/item_4/id = 4
+popup/item_5/text = "Juin"
+popup/item_5/id = 5
+popup/item_6/text = "Juillet"
+popup/item_6/id = 6
+popup/item_7/text = "Août"
+popup/item_7/id = 7
+popup/item_8/text = "Septembre"
+popup/item_8/id = 8
+popup/item_9/text = "Octobre"
+popup/item_9/id = 9
+popup/item_10/text = "Novembre"
+popup/item_10/id = 10
+popup/item_11/text = "Décembre"
+popup/item_11/id = 11
+
+[node name="MarginContainer2" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="YearNameButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_872wx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_41lcs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w6l25")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_77xsr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e88kp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_udonh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1kwrp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_q260q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mndwb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_junfc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_23p2p")
+theme_override_icons/arrow = SubResource("PortableCompressedTexture2D_pkgs7")
+flat = true
+selected = 0
+item_count = 1
+popup/item_0/text = "2025"
+
+[node name="MarginContainer2" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer3" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Heure"
+
+[node name="Panel" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="HourButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_872wx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_41lcs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w6l25")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_77xsr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e88kp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_udonh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1kwrp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_q260q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mndwb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_junfc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_23p2p")
+theme_override_icons/arrow = SubResource("PortableCompressedTexture2D_pkgs7")
+flat = true
+selected = 0
+item_count = 4
+popup/item_0/text = "00"
+popup/item_1/text = "01"
+popup/item_1/id = 1
+popup/item_2/text = "02"
+popup/item_2/id = 2
+popup/item_3/text = "03"
+popup/item_3/id = 3
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_23p2p")
+text = ":"
+
+[node name="MinuteButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_color = Color(0.788235, 0.788235, 0.788235, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_872wx")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_41lcs")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w6l25")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_77xsr")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_e88kp")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_udonh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1kwrp")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_q260q")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mndwb")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_junfc")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_23p2p")
+theme_override_icons/arrow = SubResource("PortableCompressedTexture2D_pkgs7")
+flat = true
+selected = 0
+item_count = 1
+popup/item_0/text = "00"
+
+[node name="MarginContainer3" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Emplacement"
+
+[node name="Panel2" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer2/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="LocationLineEdit" type="LineEdit" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_placeholder_color = Color(0.201527, 0.201527, 0.201527, 1)
+theme_override_colors/font_color = Color(0.787759, 0.787759, 0.787759, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_e3x64")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_e3x64")
+theme_override_styles/normal = SubResource("StyleBoxFlat_e3x64")
+placeholder_text = "Facultatif"
+clear_button_enabled = true
+flat = true
+caret_blink = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Texture"
+
+[node name="Panel2" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/VBoxContainer2/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="TextureButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/VBoxContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("1_u5xl1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6n6m7")
+theme_override_icons/arrow = ExtResource("4_mhflc")
+flat = true
+selected = 3
+item_count = 5
+popup/item_0/text = "Explosif"
+popup/item_1/text = "Liquide"
+popup/item_1/id = 1
+popup/item_2/text = "Mou"
+popup/item_2/id = 4
+popup/item_3/text = "Normal"
+popup/item_3/id = 2
+popup/item_4/text = "Dur"
+popup/item_4/id = 3
+
+[node name="MarginContainer5" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Transit"
+
+[node name="Panel2" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5/VBoxContainer2/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="TransitButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5/VBoxContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6n6m7")
+flat = true
+selected = 1
+item_count = 3
+popup/item_0/text = "Diarrhée"
+popup/item_1/text = "Normal"
+popup/item_1/id = 1
+popup/item_2/text = "Constipé"
+popup/item_2/id = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Taille"
+
+[node name="Panel2" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3/VBoxContainer2/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="SizeButton" type="OptionButton" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3/VBoxContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_6n6m7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6n6m7")
+flat = true
+selected = 1
+item_count = 4
+popup/item_0/text = "Petit"
+popup/item_1/text = "Moyen"
+popup/item_1/id = 1
+popup/item_2/text = "Gros"
+popup/item_2/id = 2
+popup/item_3/text = "Enorme"
+popup/item_3/id = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Note"
+
+[node name="Panel2" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="Empty" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+
+[node name="Stars" type="HBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Star1" type="TextureRect" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_n5gfu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Star1Button" type="Button" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28wx1")
+flat = true
+
+[node name="Star2" type="TextureRect" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_n5gfu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Star2Button" type="Button" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kuorq")
+flat = true
+
+[node name="Star3" type="TextureRect" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_n5gfu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Star3Button" type="Button" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l3mxi")
+flat = true
+
+[node name="Star4" type="TextureRect" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_n5gfu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Star4Button" type="Button" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_na86r")
+flat = true
+
+[node name="Star5" type="TextureRect" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars"]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_n5gfu")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Star5Button" type="Button" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ovytd")
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+
+[node name="Label" type="Label" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer2/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_u5xl1")
+theme_override_font_sizes/font_size = 40
+text = "Commentaire"
+
+[node name="Panel2" type="PanelContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oh7oa")
+
+[node name="MarginContainer" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer2/Panel2"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 8
+
+[node name="CommentTextEdit" type="TextEdit" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer2/Panel2/MarginContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_placeholder_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_t8i0j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rjtva")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yepeu")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_6tugn")
+placeholder_text = "Facultatif"
+wrap_mode = 1
+scroll_fit_content_height = true
+caret_blink = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 60
+
+[node name="MarginContainer4" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 5
+
+[node name="AddPoopButton" type="Button" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_fonts/font = ExtResource("4_qgvlx")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/focus = SubResource("StyleBoxEmpty_550l8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4cdbf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dwlns")
+theme_override_styles/normal = SubResource("StyleBoxFlat_4cdbf")
+text = "AJOUTER CACA"
+script = ExtResource("8_gy44p")
+
+[node name="MoveForKeyboard" type="MarginContainer" parent="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="item_selected" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer/DayNameButton" to="." method="_on_day_name_button_item_selected"]
+[connection signal="item_selected" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer/MonthNameButton" to="." method="_on_month_name_button_item_selected"]
+[connection signal="item_selected" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer2/Panel/MarginContainer/HBoxContainer/YearNameButton" to="." method="_on_year_name_button_item_selected"]
+[connection signal="item_selected" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer/HBoxContainer/HourButton" to="." method="_on_hour_button_item_selected"]
+[connection signal="item_selected" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer/MarginContainer3/VBoxContainer2/Panel/MarginContainer/HBoxContainer/MinuteButton" to="." method="_on_minute_button_item_selected"]
+[connection signal="text_changed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer3/VBoxContainer2/Panel2/MarginContainer/LocationLineEdit" to="." method="_on_location_line_edit_text_changed"]
+[connection signal="item_selected" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer2/VBoxContainer2/Panel2/MarginContainer/TextureButton" to="." method="_on_texture_button_item_selected"]
+[connection signal="item_selected" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer5/VBoxContainer2/Panel2/MarginContainer/TransitButton" to="." method="_on_transit_button_item_selected"]
+[connection signal="item_focused" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/HBoxContainer2/MarginContainer3/VBoxContainer2/Panel2/MarginContainer/SizeButton" to="." method="_on_size_button_item_focused"]
+[connection signal="pressed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star1/Star1Button" to="." method="_on_star_1_button_pressed"]
+[connection signal="pressed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star2/Star2Button" to="." method="_on_star_2_button_pressed"]
+[connection signal="pressed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star3/Star3Button" to="." method="_on_star_3_button_pressed"]
+[connection signal="pressed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star4/Star4Button" to="." method="_on_star_4_button_pressed"]
+[connection signal="pressed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer/VBoxContainer2/Panel2/MarginContainer/Stars/Star5/Star5Button" to="." method="_on_star_5_button_pressed"]
+[connection signal="text_changed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer2/VBoxContainer2/Panel2/MarginContainer/CommentTextEdit" to="." method="_on_comment_text_edit_text_changed"]
+[connection signal="pressed" from="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer4/AddPoopButton" to="AddPoopPage/ScrollContainer/MarginContainer2/MarginContainer/VBoxContainer/MarginContainer4/AddPoopButton" method="_on_pressed"]

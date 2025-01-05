@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cna74hinbo8ty"]
+
+[ext_resource type="Script" path="res://pages/calendar/calendar_elements/calendar_year.gd" id="1_hvfjo"]
+[ext_resource type="Theme" uid="uid://0v5t0uvnmwop" path="res://themes/default_theme.tres" id="1_re3ue"]
+
+[node name="CalendarYear" type="VBoxContainer" node_paths=PackedStringArray("year_label", "separator")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hvfjo")
+year_label = NodePath("Label")
+separator = NodePath("MarginContainer2/ColorRect")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("1_re3ue")
+theme_override_colors/font_color = Color(0.377919, 0.377919, 0.377919, 1)
+theme_override_font_sizes/font_size = 55
+text = "2025"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer2"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+mouse_filter = 1
+color = Color(0.160784, 0.160784, 0.160784, 1)

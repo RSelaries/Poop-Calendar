@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://dp6dt3ecmr0pe"]
+
+[ext_resource type="PackedScene" uid="uid://3keve3j1m6fw" path="res://pages/calendar/calendar.tscn" id="1_5j58o"]
+[ext_resource type="Script" path="res://main.gd" id="1_mhfh3"]
+[ext_resource type="Script" path="res://pages/pages.gd" id="1_y5oaw"]
+[ext_resource type="PackedScene" uid="uid://dndfku15kyjsf" path="res://bottom_menu_bar/bottom_menu_bar.tscn" id="2_eiisn"]
+[ext_resource type="PackedScene" uid="uid://8khlmybfx7ka" path="res://pages/graphs/graphs.tscn" id="4_ylbj7"]
+[ext_resource type="PackedScene" uid="uid://be51p4bpgyg5d" path="res://pages/contacts/contacts.tscn" id="5_bujdk"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhfh3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[node name="PageHandler" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_y5oaw")
+
+[node name="Calendar" parent="PageHandler" instance=ExtResource("1_5j58o")]
+layout_mode = 1
+cell_colors = {
+false: Color(0.09, 0.09, 0.09, 0),
+true: Color(0.11, 0.11, 0.11, 1)
+}
+cell_font_colors = {
+false: Color(0.14, 0.14, 0.14, 1),
+true: Color(1, 1, 1, 1)
+}
+
+[node name="Graphs" parent="PageHandler" instance=ExtResource("4_ylbj7")]
+visible = false
+layout_mode = 1
+
+[node name="Contacts" parent="PageHandler" instance=ExtResource("5_bujdk")]
+visible = false
+layout_mode = 1
+
+[node name="BottomMenuBar" parent="." node_paths=PackedStringArray("page_handler") instance=ExtResource("2_eiisn")]
+layout_mode = 1
+page_handler = NodePath("../PageHandler")

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2xroh7k04rcu"]
+
+[ext_resource type="Script" path="res://pages/calendar/calendar_elements/day_poops_popup/bottom_poop.gd" id="1_ccfqi"]
+[ext_resource type="Texture2D" uid="uid://bs8ww2plyswxe" path="res://global_assets/circle.svg" id="1_o3e50"]
+[ext_resource type="FontFile" uid="uid://d1bm44jmexd52" path="res://themes/fonts/Poppins/Poppins-Regular.ttf" id="2_8sa5i"]
+[ext_resource type="PackedScene" uid="uid://6mn45h6asdub" path="res://bottom_menu_bar/add_poop_button/add_poop_popup.tscn" id="2_pq7r4"]
+[ext_resource type="Theme" uid="uid://bb8l8c83dmjmt" path="res://themes/empty.tres" id="3_uxofq"]
+
+[node name="BottomPoop" type="MarginContainer"]
+offset_right = 522.0
+offset_bottom = 56.0
+script = ExtResource("1_ccfqi")
+add_poop_popup = ExtResource("2_pq7r4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 11
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("1_o3e50")
+expand_mode = 3
+
+[node name="NotificationLabel" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.376471, 0.376471, 0.376471, 1)
+theme_override_fonts/font = ExtResource("2_8sa5i")
+theme_override_font_sizes/font_size = 40
+text = "Nouveau caca"
+
+[node name="NewPoopButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 1
+theme = ExtResource("3_uxofq")
+
+[connection signal="pressed" from="NewPoopButton" to="." method="_on_new_poop_button_pressed"]
